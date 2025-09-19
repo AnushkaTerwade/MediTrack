@@ -7,13 +7,10 @@ RUN rm -rf /usr/local/tomcat/webapps/ROOT
 # Copy your WAR as ROOT.war
 COPY ROOT.war /usr/local/tomcat/webapps/ROOT.war
 
-# Copy custom server.xml
+# Copy custom server.xml (uses ${PORT} for Render)
 COPY tomcat/conf/server.xml /usr/local/tomcat/conf/server.xml
 
-# Render injects $PORT → pass it to Tomcat
-ENV CATALINA_OPTS="-DPORT=$PORT"
-
-# Expose default Tomcat port (Render remaps it anyway)
+# Expose default Tomcat port (Render remaps it)
 EXPOSE 8080
 
 # Start Tomcat
