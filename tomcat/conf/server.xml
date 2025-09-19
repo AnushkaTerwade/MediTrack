@@ -1,6 +1,5 @@
-<Server port="8005" shutdown="SHUTDOWN">
+<Server port="-1" shutdown="SHUTDOWN">
   <Service name="Catalina">
-    <!-- Bind to Render's $PORT -->
     <Connector 
         port="${PORT}" 
         protocol="HTTP/1.1"
