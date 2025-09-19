@@ -1,0 +1,16 @@
+<Server port="8005" shutdown="SHUTDOWN">
+  <Service name="Catalina">
+    <!-- Bind to Render's $PORT -->
+    <Connector 
+        port="${PORT}" 
+        protocol="HTTP/1.1"
+        address="0.0.0.0"
+        connectionTimeout="20000"
+        redirectPort="8443" />
+    <Engine name="Catalina" defaultHost="localhost">
+      <Host name="localhost" appBase="webapps"
+            unpackWARs="true" autoDeploy="true">
+      </Host>
+    </Engine>
+  </Service>
+</Server>
