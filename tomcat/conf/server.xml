@@ -1,14 +1,9 @@
 <Server port="-1" shutdown="SHUTDOWN">
   <Service name="Catalina">
-    <Connector 
-        port="${PORT}" 
-        protocol="HTTP/1.1"
-        address="0.0.0.0"
-        connectionTimeout="20000"
-        redirectPort="8443" />
+    <Connector port="${PORT}" protocol="HTTP/1.1" address="0.0.0.0"
+               connectionTimeout="20000" redirectPort="8443"/>
     <Engine name="Catalina" defaultHost="localhost">
-      <Host name="localhost" appBase="webapps"
-            unpackWARs="true" autoDeploy="true">
+      <Host name="localhost" appBase="webapps" unpackWARs="true" autoDeploy="true">
       </Host>
     </Engine>
   </Service>
